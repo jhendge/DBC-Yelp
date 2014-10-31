@@ -52,7 +52,8 @@ development:
   #   log, notice, warning, error, fatal, and panic
   # Defaults to warning.
   #min_messages: notice
-
+test:
+  <<: *default
   database: DBC-Yelp_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
