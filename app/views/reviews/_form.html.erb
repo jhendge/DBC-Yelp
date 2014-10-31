@@ -1,0 +1,7 @@
+<div class="review">
+  <%= form_for @review do |f| %>
+    <%= f.label :description, "Write a review!" %><br>
+    <%= f.text_area :description, class: 'form' %><br>
+    <%= f.submit %>
+  <% end %>
+</div>
