@@ -8,15 +8,16 @@ class PhotosController < ApplicationController
 
   def show
     @place = Place.find(params[:place_id])
-    @photo = @place.Photo.find(params[:id])
+    @photo = Photo.find(params[:id])
   end
 
   def new
     @photo = Photo.new
+    render(:"photos/form")
   end
 
   def create
-    @photo = Photo.new(place_id: params[:place_id], url: params[:photo][:url], description: params[:photo][:description])
+    @photo = Photo.new(params_photo)
     if @photo.save
       redirect_to place_path(params[:place_id])
     else
@@ -28,7 +29,7 @@ class PhotosController < ApplicationController
   def update
     @place = Place.find(params[:place_id])
     @photo = Photo.find(params[:id])
-    @photo.update_attributes(params[:photo])
+    @photo.update_attributes(params_photo)
     redirect_to place_path(@place)
   end
 
@@ -37,5 +38,11 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
     @photo.destroy
     redirect_to place_path(@place)
+  end
+
+  private
+
+  def params_photo
+    params.require(:photo).permit(:place_id, :url, :description)
   end
 end
