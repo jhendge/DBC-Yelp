@@ -34,8 +34,10 @@ gem 'omniauth-dbc', :git => "https://github.com/Devbootcamp/omniauth-dbc.git"
 
 gem 'shoulda-matchers'
 
-
+gem "therubyracer"
+gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+
 group :development, :test do
 	gem 'rspec-rails', '~> 3.0.0'
 end
