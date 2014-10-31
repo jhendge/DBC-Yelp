@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root to: 'pages#index'
+
   get '/signin', :to => 'sessions#sign_in'
   get '/signout', :to => 'sessions#sign_out'
   get 'auth/:provider/callback', :to => 'sessions#auth'
@@ -7,9 +9,6 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:index] do
   end
-
-
-  root to: 'pages#index'
 
   resources :places do
     resources :photos
