@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 == README
 
 This README would normally document whatever steps are necessary to get the
@@ -128,4 +127,3 @@ Josh:: https://github.com/JackMarx
 Raphaël:: https://github.com/Kyhz
 Shomari:: https://github.com/Shomari
 Joe:: https://github.com/jhendge
->>>>>>> a5b513ed7258f43dcc458b7c7b5100955455e831
