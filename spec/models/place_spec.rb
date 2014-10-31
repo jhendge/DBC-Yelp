@@ -11,6 +11,12 @@ describe Place do
 						 )
 					}
 
+    it {should belong_to(:user)}
+    it {should belong_to(:category)}
+    it {should have_many(:votes)}
+    it {should have_many(:photos)}
+    it {should have_many(:reviews)}
+
 	describe "#score" do
 		
 		it "should calculate its score based off its votes" do
