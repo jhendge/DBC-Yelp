@@ -54,8 +54,10 @@ ActiveRecord::Schema.define(version: 20141030200556) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "token"
     t.string   "name"
+    t.string   "email"
+    t.string   "gravatar"
+    t.integer  "cohort_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

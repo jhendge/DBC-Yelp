@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
+  root to: 'pages#index'
 
-  
-  resources :categories, only: [:index] do
-  end
+  get '/signin', :to => 'sessions#sign_in'
+  get '/signout', :to => 'sessions#sign_out'
+  get 'auth/:provider/callback', :to => 'sessions#auth'
 
-
-  root to: 'reviews#index'
+  resources :categories, only: [:index]
 
   resources :places do
     resources :photos
