@@ -20,4 +20,3 @@ burrito = Photo.create!(place_id: 1, url: "http://www.fizzgrid.com/wp-content/up
 tacos = Photo.create!(place_id: 1, url: "http://www.mjandhungryman.com/wp-content/uploads/2013/05/Chipotle-Marinated-Chicken-blog1.jpg", description: "unlike burritos, tacos are meant to be served in multiples of three...")
 chinchilla = Photo.create!(place_id: 1, url: "http://smilingpaws.files.wordpress.com/2014/01/chinchilla-baby-drinking-milk1.jpg", description: "not quite a chimichanga... it's a chinchilla")
 patrons = Photo.create!(place_id: 1, url: "http://static3.businessinsider.com/image/5356555a6da8117c6a198ea3-480/chipotle.jpg", description: "weirdos.")
->>>>>>> a5b513ed7258f43dcc458b7c7b5100955455e831
