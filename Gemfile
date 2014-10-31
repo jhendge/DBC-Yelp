@@ -30,10 +30,14 @@ gem 'spring',        group: :development
 
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'less-rails'
+gem 'therubyracer'
 
 group :development, :test do
 	gem 'rspec-rails', '~> 3.0.0'
 end
+
+gem 'shoulda-matchers'
 
 
 

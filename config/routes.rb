@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
 
-  root to: 'pages#index'
+  root to: 'review#index'
 
   resources :places do
     resources :photos
