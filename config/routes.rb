@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   
   resources :categories, only: [:index] do
   end
@@ -16,4 +17,5 @@ Rails.application.routes.draw do
   resources :reviews do
     resources :votes
   end
+
 end

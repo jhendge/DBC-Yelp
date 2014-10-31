@@ -1,3 +1,4 @@
+
 # PostgreSQL. Versions 8.2 and up are supported.
 #
 # Install the pg driver:
@@ -52,11 +53,6 @@ development:
   # Defaults to warning.
   #min_messages: notice
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
-test:
-  <<: *default
   database: DBC-Yelp_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
@@ -83,3 +79,4 @@ production:
   database: DBC-Yelp_production
   username: DBC-Yelp
   password: <%= ENV['DBC-YELP_DATABASE_PASSWORD'] %>
+
