@@ -1,0 +1,10 @@
+
+
+<ul><% @places.each do |place| %>
+  <li><h3><%= link_to "#{place.name}", place_path(place) %> </h3>
+  <li><%= place.description %></li>
+  <li><%= place.address %></li>
+  <li><%= place.phone %></li>
+  <li><%= place.website %></li>  
+  <% end %>
+</ul>

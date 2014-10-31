@@ -1,5 +1,9 @@
-class PlacesController < ActionController::Base
+class PlacesController < ApplicationController
 	# include UserHelper
+	def index
+		@places = Place.all
+	end
+
 
 	def show
 		@place = Place.find(params[:id])
@@ -27,9 +31,6 @@ class PlacesController < ActionController::Base
 		return redirect_to edit_place_path(@place)
 	end
 
-	def index
-		# AJAX call for main page?
-	end
 
 	def new
 		@place = Place.new()
