@@ -1,8 +1,9 @@
-class PlacesController < ActionController::Base
+class PlacesController < ApplicationController
 	# include UserHelper
 
 	def show
 		@place = Place.find(params[:id])
+		render :"places/show", layout: "layouts/application"
 	end
 
 	def create
@@ -27,10 +28,6 @@ class PlacesController < ActionController::Base
 		return redirect_to edit_place_path(@place)
 	end
 
-	def index
-		# AJAX call for main page?
-	end
-
 	def new
 		@place = Place.new()
 		return render :"places/form"
@@ -40,6 +37,9 @@ class PlacesController < ActionController::Base
 		@place = Place.find(params[:id])
 		if request.xhr?
 			# AJAX stuff
+			# content_type :JSON
+			# do something here
+			# return llsomething.to_json
 		else
 			if @place.update_attributes(params_place)
 				return redirect_to place_path(@place)

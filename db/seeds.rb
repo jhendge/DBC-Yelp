@@ -11,7 +11,7 @@
 chipotle = Place.create!(description: "\"It's pronounced 'Chip-po-tlay'.\"", 
 						 user_id: 1, 
 						 name: "Chipotle", 
-						 address: "233 W Lake St", 
+						 address: "233 W Lake St, Chicago, IL", 
 						 phone: "(312) 263-6230", 
 						 website: "http://chipotle.com"
 						 )

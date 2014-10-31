@@ -5,12 +5,12 @@
 
 		<div id="place_score">Score: <%= @place.score %></div>
 		<div id="place_phone">Phone: <%= @place.phone %></div>
-		<div id="place_address">Address: <%= @place.address %></div>
+		<div id="place_address"><%= @place.address %>, Chicago, IL</div>
 		<div id="place_website">Website: <%= @place.website %></div>
 
 	</header>
 
-	<div class="place_map_container"><%= @place.map %></div>
+	<div style="height:400px;width:600px" id="place_map_container"><%= @place.map %></div>
 	<div class="photo_container">
 		<%# @place.photos.each do |photo| %>
 			<%# render :"photos/show", locals: {:photo => photo} %>
