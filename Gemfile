@@ -32,6 +32,8 @@ gem 'omniauth'
 gem 'omniauth-oauth2'
 gem 'omniauth-dbc', :git => "https://github.com/Devbootcamp/omniauth-dbc.git"
 
+gem 'shoulda-matchers'
+
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
 group :development, :test do
