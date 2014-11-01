@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/signout', :to => 'sessions#sign_out'
   get 'auth/:provider/callback', :to => 'sessions#auth'
 
+  get '/filter', :to => 'categories#filter'
+
   resources :categories, only: [:index]
 
   resources :places do

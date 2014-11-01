@@ -2,6 +2,12 @@
 
 	<div style="height:400px;width:600px" id="places_map"></div>
 
+	<% @categories.each do |category| %>
+
+	<%= link_to category.name, {:controller => "categories", :action => "filter", by: category.name}, {:method => :get, :class => "btn btn-success" }%>
+
+	<% end %>
+
 	<% @places.each do |place| %>
 
 		<header>
