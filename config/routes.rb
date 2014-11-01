@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'pages#index'
+  root to: 'places#index'
 
   get '/signin', :to => 'sessions#sign_in'
   get '/signout', :to => 'sessions#sign_out'
