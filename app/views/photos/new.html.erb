@@ -1,0 +1,7 @@
+<%= form_for [@place, @photo] do |f| %>
+  <%= f.label :photo %><br>
+  <%= f.file_field :picture %><br>
+  <%= f.label :description %><br>
+  <%= f.text_field :description %>
+  <%= f.submit "Submit" %>
+<% end %>
