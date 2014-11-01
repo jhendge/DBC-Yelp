@@ -12,8 +12,9 @@ class PhotosController < ApplicationController
   end
 
   def new
+    @place = Place.find(params[:place_id])
     @photo = Photo.new
-    render(:"photos/form")
+    render(:"photos/new")
   end
 
   def create
@@ -22,7 +23,7 @@ class PhotosController < ApplicationController
       redirect_to place_path(params[:place_id])
     else
       @error = "Photo not saved"
-      render :"photos/form"
+      render :"photos/new"
     end
   end
 
