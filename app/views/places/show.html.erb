@@ -1,27 +1,65 @@
-<div class="place_container">
 
-	<header>
-		<h1><%= @place.name %></h1>
 
-		<div id="place_score">Score: <%= @place.score %></div>
-		<div id="place_phone">Phone: <%= @place.phone %></div>
-		<div id="place_address">Address: <%= @place.address %></div>
-		<div id="place_website">Website: <%= @place.website %></div>
 
-	</header>
+<!-- navbar stuff -->
+ <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">DBCYelp</a>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to "Link1", "/path1"  %></li>
+            <li><%= link_to "Link2", "/path2"  %></li>
+            <li><%= link_to "Link3", "/path3"  %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- end navbar stuff -->
 
-	<div class="place_map_container"><%= @place.map %></div>
-	<div class="photo_container">
+    <div class="container">
+
+    <a href="#" class="btn btn-block btn-primary">Create a Review</a>
+
+
+    <div class="row">
+      <div class="col-md-4 "
+	<h1><%= @place.name %></h1>
+
+	<div id="place_score">Score: <%= @place.score %></div>
+	<div id="place_phone">Phone: <%= @place.phone %></div>
+	<div id="place_address">Address: <%= @place.address %></div>
+	<div id="place_website">Website: <%= @place.website %></div>
+	<p class="place_description"><%= @place.description %></p>
+	<a href="#" class="btn btn-primary btn-default">Edit Place</a>
+	  </div>
+
+	<div class="col-md-8">
+	  map goes here
+	  <div class="place_map_container"><%= @place.map %></div>
+	  <div class="photo_container">
 		<%# @place.photos.each do |photo| %>
 			<%# render :"photos/show", locals: {:photo => photo} %>
 		<%# end %>
+	  </div>
 	</div>
-	<p class="place_description"><%= @place.description %></p>
-
-	<div class="reviews_container">
-		<% @place.reviews.each do |review| %>
-		<%= render :"reviews/show", locals: {:review => review} %>
-		<% end %>
 	</div>
 
+
+	<div class="row">
+	  <div class="col-md-8 col-md-offset-2">
+
+	  <div class="reviews_container">
+	  	inside reviews container
+	  	<% @place.reviews.each do |review| %>
+	  	<%= render :"reviews/show", locals: {:review => review} %>
+	  	<% end %>
+	  </div>
+	  </div>
+	  </div>
 </div>
+
