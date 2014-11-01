@@ -5,7 +5,7 @@
 
 		<div id="place_score">Score: <%= @place.score %></div>
 		<div id="place_phone">Phone: <%= @place.phone %></div>
-		<div id="place_address"><%= @place.address %>, Chicago, IL</div>
+		<div id="place_address"><%= @place.address %></div>
 		<div id="place_website">Website: <%= @place.website %></div>
 
 	</header>
@@ -23,5 +23,4 @@
 		<%= render :"reviews/show", locals: {:review => review} %>
 		<% end %>
 	</div>
-
 </div>

@@ -11,10 +11,18 @@
 chipotle = Place.create!(description: "\"It's pronounced 'Chip-po-tlay'.\"", 
 						 user_id: 1, 
 						 name: "Chipotle", 
-						 address: "233 W Lake St, Chicago, IL", 
+						 address: "233 W Lake St, Chicago, IL, 60606", 
 						 phone: "(312) 263-6230", 
 						 website: "http://chipotle.com"
 						 )
+
+blackwood = Place.create!(name: "Blackwood", 
+						  category_id: 2, 
+						  user_id: 3, 
+						  address: "305 W Lake Street, Chicago, IL, 60606",
+						  phone: "(312) 621-9663",
+						  website: "http://blackwoodbbq.com",
+						  description: "9.5/10 it's okay.")
 
 burrito = Photo.create!(place_id: 1, url: "http://www.fizzgrid.com/wp-content/uploads/2014/03/double-wrap.jpg", description: "a delicious, savory meal within the confines of a flour tortilla")
 tacos = Photo.create!(place_id: 1, url: "http://www.mjandhungryman.com/wp-content/uploads/2013/05/Chipotle-Marinated-Chicken-blog1.jpg", description: "unlike burritos, tacos are meant to be served in multiples of three...")

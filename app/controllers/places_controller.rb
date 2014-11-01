@@ -1,9 +1,14 @@
 class PlacesController < ApplicationController
-	# include UserHelper
+	include SessionsHelper
+
+
+	def index
+		@places = Place.all
+	end
 
 	def show
 		@place = Place.find(params[:id])
-		render :"places/show", layout: "layouts/application"
+		# render :"places/show", layout: "layouts/application"
 	end
 
 	def create

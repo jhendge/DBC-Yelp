@@ -1,0 +1,29 @@
+<div class="place_container">
+
+	<div style="height:400px;width:600px" id="places_map"></div>
+
+	<% @places.each do |place| %>
+
+		<header>
+			<h1><%= place.name %></h1>
+
+			<div class="place_score">Score: <%= place.score %></div>
+			<div class="place_phone">Phone: <%= place.phone %></div>
+			<div class="place_address"><%= place.address %></div>
+			<div class="place_website">Website: <%= place.website %></div>
+
+		</header>
+		<div class="photo_container">
+			<%# place.photos.each do |photo| %>
+				<%# render :"photos/show", locals: {:photo => photo} %>
+			<%# end %>
+		</div>
+		<p class="place_description"><%= place.description %></p>
+
+		<div class="reviews_container">
+			<% place.reviews.each do |review| %>
+			<%= render :"reviews/show", locals: {:review => review} %>
+			<% end %>
+		</div>
+	<% end %>
+</div>
