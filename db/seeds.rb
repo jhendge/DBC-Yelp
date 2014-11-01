@@ -8,11 +8,11 @@
 
 
 ################ Sample Places ################
-chipotle = Place.create!(description: "\"It's pronounced 'Chip-po-tlay'.\"", 
-						 user_id: 1, 
-						 name: "Chipotle", 
-						 address: "233 W Lake St", 
-						 phone: "(312) 263-6230", 
+chipotle = Place.create!(description: "\"It's pronounced 'Chip-po-tlay'.\"",
+						 user_id: 1,
+						 name: "Chipotle",
+						 address: "233 W Lake St",
+						 phone: "(312) 263-6230",
 						 website: "http://chipotle.com"
 						 )
 
@@ -22,3 +22,11 @@ chinchilla = Photo.create!(place_id: 1, url: "http://smilingpaws.files.wordpress
 patrons = Photo.create!(place_id: 1, url: "http://static3.businessinsider.com/image/5356555a6da8117c6a198ea3-480/chipotle.jpg", description: "weirdos.")
 ################## peeps ######################
 shomari = User.create!(name: "shomari")
+
+#################### categories ###################
+mexican = Category.create!(name: "mexican")
+bbq = Category.create!(name: "bbq")
+sandwiches = Category.create!(name: "sandwiches")
+pizza = Category.create!(name: "pizza")
+coffee = Category.create!(name: "coffee")
+burgers = Category.create!(name: "burgers")

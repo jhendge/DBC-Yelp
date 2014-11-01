@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-	# include UserHelper
+	include SessionsHelper
 	def index
 		@places = Place.all
 	end
@@ -7,6 +7,7 @@ class PlacesController < ApplicationController
 
 	def show
 		@place = Place.find(params[:id])
+		render :show, :layout => false
 	end
 
 	def create
@@ -20,7 +21,7 @@ class PlacesController < ApplicationController
 				return redirect_to place_path(@place)
 			else
 				@error = "That don't be right."
-				return render :"places/form"
+				#return render :"places/form"
 			end
 		end
 	end
@@ -28,13 +29,13 @@ class PlacesController < ApplicationController
 	def edit
 		# should only get called if JS is disabled
 		@place = Place.find(params[:id])
-		return redirect_to edit_place_path(@place)
+		#return redirect_to edit_place_path(@place)
 	end
 
 
 	def new
 		@place = Place.new()
-		return render :"places/form"
+		#return render :"places/form"
 	end
 
 	def update
@@ -57,6 +58,6 @@ class PlacesController < ApplicationController
 	private
 
 	def params_place
-		params.require(:place).permit(:category, :name, :address, :phone, :website, :description)
+		params.require(:place).permit(:category, :name, :address, :city, :state, :zipcode, :phone, :website, :description)
 	end
 end
