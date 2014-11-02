@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	has_many :places
-	has_many :votes
+	has_many :votes, as: :voteable
 	has_many :reviews
 
 
@@ -15,5 +15,5 @@ class User < ActiveRecord::Base
 	  end
 	  user
 	end
-	
+
 end

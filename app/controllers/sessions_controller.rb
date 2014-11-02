@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
   end
 
   def sign_out
-    session.clear
-    redirect_to root_path
+    session[:user_id] = nil
+    redirect_to :root
   end
 
   def auth

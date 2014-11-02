@@ -1,10 +1,27 @@
 
+<div class="row">
+  <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
+    <ul class="list-group">
+<% @places.each do |place| %>
+  <li class="list-group-item" id="show-place-box">
+  <h3><%= link_to "#{place.name}", place_path(place) %> </h3>
+      <%= place.description %><br>
+      <%= place.address %><br>
+      <%= place.phone %><br>
+      <%= place.website %><br>
+      <%= place.score %></li>
 
-<ul><% @places.each do |place| %>
-  <li><h3><%= link_to "#{place.name}", place_path(place) %> </h3>
-  <li><%= place.description %></li>
-  <li><%= place.address %></li>
-  <li><%= place.phone %></li>
-  <li><%= place.website %></li>  
+     <%= form_tag place_votes_path(place) do |f| %>
+      <%= hidden_field_tag(:"vote[voteable_id]", place.id) %>
+      <%= hidden_field_tag(:"vote[voteable_type]", "Place") %>
+      <%= hidden_field_tag(:"vote[upvote?]", true) %>
+      <%= submit_tag(class: "glyphicon glyphicon-hand-up") %>
+    <% end %>
   <% end %>
-</ul>
+      </div>
+    </div>
+  </ul>
+  </div>
+</div>
+
+
