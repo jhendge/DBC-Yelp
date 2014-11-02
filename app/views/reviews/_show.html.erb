@@ -1,9 +1,23 @@
-  <div class="review-container">
+  <div class="review-container voteable-container">
       <div class="row">
         <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
+          <span class="score"><%= review.score %></span>
           <div class="btn-group-vertical">
-            <button class="btn btn-primary btn-default">Awesome</button>
-            <button class="btn btn-primary btn-default">Bummer</button>
+            <div class="votes-container">
+
+             <%= form_tag vote_up_path(review), class: "vote-up" do |f| %>
+              <%= hidden_field_tag(:"vote[voteable_id]", review.id) %>
+              <%= hidden_field_tag(:"vote[voteable_type]", "Review") %>
+              <%= hidden_field_tag(:"vote[upvote?]", true) %>
+              <%= submit_tag "Awesome", class: "btn btn-primary btn-default" %>
+            <% end %>
+             <%= form_tag vote_up_path(review), class: "vote-up" do |f| %>
+              <%= hidden_field_tag(:"vote[voteable_id]", review.id) %>
+              <%= hidden_field_tag(:"vote[voteable_type]", "Review") %>
+              <%= hidden_field_tag(:"vote[upvote?]", false) %>
+              <%= submit_tag "Bummer", class: "btn btn-primary btn-default" %>
+              <% end %>
+            </div>
           </div>
         </div>
         <div class="col-md-2 col-sm-2 col-xs-2 col-lg-2">
