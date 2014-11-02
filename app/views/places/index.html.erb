@@ -9,15 +9,21 @@
       <%= place.address %><br>
       <%= place.phone %><br>
       <%= place.website %><br>
-      <%= place.score %></li>
+      <span class="place-score"><%= place.score %></span>
 
-    <div class="glyphicon glyphicon-hand-up"></div>
-     <%= form_tag place_votes_path(place) do |f| %>
+     <%= form_tag vote_up_path(place), class: "vote-up" do |f| %>
       <%= hidden_field_tag(:"vote[voteable_id]", place.id) %>
       <%= hidden_field_tag(:"vote[voteable_type]", "Place") %>
       <%= hidden_field_tag(:"vote[upvote?]", true) %>
-      <%= submit_tag(class: "glyphicon glyphicon-hand-up") %>
+      <%= submit_tag "up" %>
     <% end %>
+     <%= form_tag vote_up_path(place), class: "vote-up" do |f| %>
+      <%= hidden_field_tag(:"vote[voteable_id]", place.id) %>
+      <%= hidden_field_tag(:"vote[voteable_type]", "Place") %>
+      <%= hidden_field_tag(:"vote[upvote?]", false) %>
+      <%= submit_tag "down" %>
+    <% end %>
+    </li>
   <% end %>
       </div>
     </div>
