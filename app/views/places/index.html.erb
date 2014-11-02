@@ -11,6 +11,7 @@
       <%= place.website %><br>
       <%= place.score %></li>
 
+    <div class="glyphicon glyphicon-hand-up"></div>
      <%= form_tag place_votes_path(place) do |f| %>
       <%= hidden_field_tag(:"vote[voteable_id]", place.id) %>
       <%= hidden_field_tag(:"vote[voteable_type]", "Place") %>
