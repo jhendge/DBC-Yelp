@@ -1,7 +1,12 @@
-<div class="review">
-  <%= form_for [@place, @review] do |f| %>
+<h1><%= @place.name %></h1>
+
+<div class="row">
+  <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6">
+  <%= form_for [@place, @review], html: {role: "form"} do |f| %>
+  <div class="form-group">
     <%= f.label :description, "Write a review!" %><br>
-    <%= f.text_area :description, class: 'form' %><br>
-    <%= f.submit %>
+    <%= f.text_area :description, cols: 89, rows: 6, class: 'form' %><br>
+    <%= f.submit class: "btn btn-block btn-primary"  %>
   <% end %>
+  </div>
 </div>

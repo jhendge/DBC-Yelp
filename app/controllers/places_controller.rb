@@ -36,8 +36,8 @@ class PlacesController < ApplicationController
 
 
 	def new
-		@place = Place.new()
-		#return render :"places/form"
+		@place = Place.new
+
 	end
 
 	# def update
