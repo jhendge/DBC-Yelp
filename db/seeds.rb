@@ -49,6 +49,8 @@ subway = Place.create!(name: "Subway",
 					   website: "http://www.subway.com",
 					   description: "5 dollar foot-long")
 
+Place.all.each {|p| p.find_coord; p.save}
+
 mexican = Category.create!(name: "Mexican")
 bbq = Category.create!(name: "BBQ")
 sammich = Category.create!(name: "Sandwiches")

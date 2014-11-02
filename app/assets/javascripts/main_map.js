@@ -2,12 +2,6 @@ $(document).ready(function() {
 	var map;
 	var geocoder;
 	var DBC = new google.maps.LatLng(41.889929, -87.637654);
-	// var DBCIcon = {
-	// 	url: '<%= asset_path("unnamed.png") %>',
-	// 	size: new google.maps.Size(20, 32),
-	// 	origin: new google.maps.Point(0,0),
-	// 	anchor: new google.maps.Point(0, 0)
-	// }
 
 	function multipleMarkerInitialize() {
 	  geocoder = new google.maps.Geocoder();
@@ -27,7 +21,6 @@ $(document).ready(function() {
 			map: map,
 			position: DBC,
 			title: 'DBC'
-			// icon: DBCIcon
 		});
 	};
 
@@ -40,6 +33,9 @@ $(document).ready(function() {
 			var url = $(placesNames[i]).attr('href');
 			var myLatlng = new google.maps.LatLng(placesLat[i].innerHTML, placesLng[i].innerHTML);
 			var label = placesNames[i].innerHTML;
+			console.log(label);
+			console.log(url);
+			console.log(myLatlng);
 	        var marker = new google.maps.Marker({
 	              position: myLatlng,
 	              map: map,
@@ -47,7 +43,7 @@ $(document).ready(function() {
 	              url: url
 	        });
 	        google.maps.event.addListener(marker, 'click', function() {
-	              window.location.href = this.url;  //changed from markers[i] to this[i]
+	              window.location.href = this.url;
 	        });
 		}
 	};

@@ -14,7 +14,7 @@
 
       <% @places.each do |place| %>
 
-      <ul class="list-group">
+      <ul class="list-group voteable-container">
         <li class="list-group-item" id="show-place-box">
 
           <h3><%= link_to "#{place.name}", place_path(place) %> </h3>
@@ -25,20 +25,23 @@
                    <%= place.website %><br>
                    <div class="place_lat" style="display:none"><%= place.lat %></div>
                    <div class="place_lng" style="display:none"><%= place.lng %></div>
-                             <div class="btn-toolbar">
+                   <div class="btn-toolbar">
+
+                 <div class="votes-container">
                  <%= form_tag vote_up_path(place), class: "vote-up" do |f| %>
                     <%= hidden_field_tag(:"vote[voteable_id]", place.id) %>
                     <%= hidden_field_tag(:"vote[voteable_type]", "Place") %>
                     <%= hidden_field_tag(:"vote[upvote?]", true) %>
                     <%= submit_tag "upvote", class: "btn btn-group" %>
                     <% end %>
-                     <span class="btn-group" id="score"><%= place.score %></span>
+                     <span class="btn-group score"><%= place.score %></span>
   <%= form_tag vote_up_path(place), class: "vote-up" do |f| %>
                     <%= hidden_field_tag(:"vote[voteable_id]", place.id) %>
                     <%= hidden_field_tag(:"vote[voteable_type]", "Place") %>
                     <%= hidden_field_tag(:"vote[upvote?]", false) %>
                     <%= submit_tag "downvote", class: "btn btn-group" %>
                     <% end %>
+                </div>
                   </div>
                   </li>
 
