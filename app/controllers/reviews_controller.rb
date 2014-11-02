@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
-  include SessionsHelper
+	include SessionsHelper
+	before_filter :check_session
 
 	def index #don't really need this
 		@place = Place.find(params[:place_id])

@@ -16,7 +16,7 @@ module SessionsHelper
 
   def check_session
     unless authenticated?
-      redirect_to :root
+      redirect_to signin_path
     end
   end
 

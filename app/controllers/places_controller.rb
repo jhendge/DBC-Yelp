@@ -1,5 +1,6 @@
 class PlacesController < ApplicationController
 	include SessionsHelper
+
 	def index
 		@places = Place.all
 		@vote = Vote.new
@@ -17,6 +18,7 @@ class PlacesController < ApplicationController
 	end
 
 	def create
+		check_session
 		@place = Place.new(params_place)
 		@place.user_id = current_user.id # UserHelper method
 		@place.find_coord
@@ -34,22 +36,26 @@ class PlacesController < ApplicationController
 	end
 
 	def edit
+		check_session
 		# should only get called if JS is disabled
 		@place = Place.find(params[:id])
 		#return redirect_to edit_place_path(@place)
 	end
 
 	def new
+		check_session
 		@place = Place.new
 	end
 
 	def destroy
+		check_session
 		place = Place.find(params[:id])
 		place.destroy
 		return redirect_to root_url
 	end
 
 	def update
+		check_session
 		@place = Place.find(params[:place_id])
 		@place.incremenet(:votes)
 		@place.save
