@@ -9,6 +9,7 @@
 <% end %>
 
 <div class="row">
+<<<<<<< HEAD
   <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
      <%= link_to 'Add a cool place', new_place_path, :class => "btn btn-block btn-primary" %><br>
     <ul class="list-group">
@@ -22,7 +23,7 @@
       <span class="score"><%= place.score %></span>
       <div class="place_lat" style="display:none"><%= place.lat %></div>
       <div class="place_lng" style="display:none"><%= place.lng %></div>
-     <div class="votes-container"> 
+     <div class="votes-container">
      <%= form_tag vote_up_path(place), class: "vote-up" do |f| %>
       <%= hidden_field_tag(:"vote[voteable_id]", place.id) %>
       <%= hidden_field_tag(:"vote[voteable_type]", "Place") %>
@@ -38,6 +39,7 @@
     </div>
     </li>
   <% end %>
+
       </div>
     </div>
   </ul>

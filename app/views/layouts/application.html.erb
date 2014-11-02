@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
     <title><%= content_for?(:title) ? yield(:title) : "DBCYelp" %></title>
     <%= csrf_meta_tags %>
 
@@ -50,23 +51,18 @@
         <a class="navbar-brand" href="#">DBCYelp</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "Link1", "/path1"  %></li>
-            <li><%= link_to "Link2", "/path2"  %></li>
-            <li><%= link_to "Link3", "/path3"  %></li>
-            <% unless authenticated? %>
-            <li><%= button_to "Sign In", {:controller => "sessions", :action => "sign_in"}, {:method => :get, :form_class => "navbar-form", :class => "btn btn-success" }%></li>
-            <% else %>
-            <li><%= button_to "Sign Out", {:controller => "sessions", :action => "sign_out"}, {:method => :get, :form_class => "navbar-form", :class => "btn btn-success" }%> </li>
-            <% end %>
+
+            <li class="nav-link"><%= link_to "Create", new_place_path  %></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+
+            <li><a href="/signin">Login</a></li>
+
           </ul>
         </div>
       </div>
     </div>
     <div class="container">
-
-
-
-
 
           <%= bootstrap_flash %>
           <%= yield %>
