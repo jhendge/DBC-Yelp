@@ -7,7 +7,6 @@
       <%= link_to 'Create a Review', new_place_review_path(@place), :class => "btn btn-block btn-primary" %><br>
         <div class="row">
           <div class="col-md-8 col-sm-8 col-lg-8 col-xs-8"  id="info-text">
-	           Score: <span class="score"><%= @place.score %></span><br>
 	           Phone: <%= @place.phone %><br>
              Address: <div id="place_address"><%= @place.address %>, <%= @place.city %>, <%= @place.state %>, <%= @place.zipcode %></div><br>
 	           Website: <%= @place.website %><br>
@@ -23,7 +22,7 @@
                     <%= hidden_field_tag(:"vote[upvote?]", true) %>
                     <%= submit_tag "upvote", class: "btn btn-group" %>
                     <% end %>
-                     <span class="btn-group" id="score"><%= @place.score %></span>
+                     <span class="btn-group score" id="score"><%= @place.score %></span>
                   <%= form_tag vote_up_path(@place), class: "vote-up" do |f| %>
                     <%= hidden_field_tag(:"vote[voteable_id]", @place.id) %>
                     <%= hidden_field_tag(:"vote[voteable_type]", "Place") %>
