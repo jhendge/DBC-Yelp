@@ -5,5 +5,15 @@ class CategoriesController < ApplicationController
     @category = Category.find(params[:id])
     @places = @category.places
   end
+
+  def filter
+  	category = Category.find_by_name(params[:by])
+  	p category
+  	p params
+  	p params[:by]
+  	@places = category.places
+  	@categories = Category.all
+  	render :"places/index"
+  end
   
 end

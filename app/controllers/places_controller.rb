@@ -1,20 +1,25 @@
 class PlacesController < ApplicationController
 	include SessionsHelper
-
 	def index
 		@places = Place.all
+		@vote = Vote.new
 		@vote = Vote.new
 	end
 
 
 	def show
 		@place = Place.find(params[:id])
-		render :show
+	end
+
+	def index
+		@places = Place.all
+		@categories = Category.all
 	end
 
 	def create
 		@place = Place.new(params_place)
 		@place.user_id = current_user.id # UserHelper method
+		@place.find_coord
 		if request.xhr?
 			# Return some JSON stuff
 		else
@@ -34,22 +39,9 @@ class PlacesController < ApplicationController
 		#return redirect_to edit_place_path(@place)
 	end
 
-
 	def new
 		@place = Place.new
-
 	end
-
-	# def update
-	# 	@place = Place.find(params[:id])
-	# 	if request.xhr?
-	# 		# AJAX stuff
-	# 	else
-	# 		if @place.update_attributes(params_place)
-	# 			return redirect_to place_path(@place)
-	# 		end
-	# 	end
-	# end
 
 	def destroy
 		place = Place.find(params[:id])

@@ -10,6 +10,8 @@ class CreatePlaces < ActiveRecord::Migration
       t.string :zipcode
       t.string :phone
       t.string :website
+      t.float :lat
+      t.float :lng
       t.text :description
 
       t.timestamps

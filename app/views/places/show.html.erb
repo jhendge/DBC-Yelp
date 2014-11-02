@@ -1,3 +1,4 @@
+<%= javascript_include_tag 'maps' %>
 <div class="container voteable-container">
   <div class="row">
     <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6" id="info-container">
@@ -7,7 +8,7 @@
           <div class="col-md-8 col-sm-8 col-lg-8 col-xs-8"  id="info-text">
 	           Score: <span class="score"><%= @place.score %></span><br>
 	           Phone: <%= @place.phone %><br>
-              Address: <%= @place.address %><br>
+              Address: <div id="place_address"><%= @place.address %></div><br>
               City: <%= @place.city %><br>
               State: <%= @place.state %><br>
 	           Zipcode: <%= @place.zipcode %><br>
@@ -35,7 +36,7 @@
           </div>
         </div>
 	    </div>
-      <div class="col-md-3 col-sm-3 col-lg-3 col-xs-3" id="maps-container">
+      <div style="height:400px;width:600px" class="col-md-3 col-sm-3 col-lg-3 col-xs-3" id="place_map_container">
         map goes here
       </div>
     </div><br>
@@ -47,11 +48,9 @@
         <% end %>
       </div>
 
-
     <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4" id="directions-container">
-      inside directions container
+      <ul id="directions">
+      </ul>
 	  </div>
 	</div>
 </div>
-
-

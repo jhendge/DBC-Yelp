@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20141030200556) do
     t.string   "zipcode"
     t.string   "phone"
     t.string   "website"
+    t.float    "lat"
+    t.float    "lng"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"

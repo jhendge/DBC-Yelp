@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'auth/:provider/callback', :to => 'sessions#auth'
 
   post '/places/:place_id/votes', :to => 'votes#make', as: "vote_up"
+  get '/filter', :to => 'categories#filter'
 
   resources :categories, only: [:index]
 
