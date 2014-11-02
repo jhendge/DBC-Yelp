@@ -1,20 +1,23 @@
 class VotesController < ApplicationController
   include SessionsHelper
 
-  def create
-    p "_____________________"
-    #p session[:user_id]
+  def make
     if session[:user_id] == nil
-      p "____________________________"
-      p session[:user_id]
-      p "in seession nil"
       return redirect_to signin_path
     else
-      @user = current_user
-      @vote = Vote.new(vote_params)
-      @vote.user_id = @user
-      @vote.save
-      redirect_to root_url
+      if request.xhr?
+        @user = current_user
+        @vote = Vote.new(vote_params)
+        @vote.user = @user
+        @vote.save
+        return render json: @vote.voteable.score.to_json, content_type: :json
+      else
+        @user = current_user
+        @vote = Vote.new(vote_params)
+        @vote.user = @user
+        @vote.save
+        redirect_to root_url
+      end
     end
   end
 
