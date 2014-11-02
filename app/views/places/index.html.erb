@@ -9,7 +9,7 @@
       <%= place.address %><br>
       <%= place.phone %><br>
       <%= place.website %><br>
-      <span class="place-score"><%= place.score %></span>
+      <span class="score"><%= place.score %></span>
 
      <%= form_tag vote_up_path(place), class: "vote-up" do |f| %>
       <%= hidden_field_tag(:"vote[voteable_id]", place.id) %>

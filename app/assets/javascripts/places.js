@@ -7,7 +7,7 @@ $(document).ready(function(){
 		var url = $(this).attr("action");
 		console.log(url);
 		$.post( url, data,  function(response){
-			button.closest('.list-group-item').find(".place-score").text(response);
+			button.closest('.list-group-item').find(".score").text(response);
 		}, "json");
 	});
 });
