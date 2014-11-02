@@ -11,28 +11,40 @@
 chipotle = Place.create!(description: "\"It's pronounced 'Chip-po-tlay'.\"", 
 						 user_id: 1, 
 						 name: "Chipotle", 
-						 address: "233 W Lake St, Chicago, IL, 60606", 
+						 address: "233 W Lake St", 
+						 city: "Chicago",
+						 state: "IL",
+						 zipcode: "60606",
 						 phone: "(312) 263-6230", 
 						 website: "http://chipotle.com"
 						 )
 
 blackwood = Place.create!(name: "Blackwood", 
 						  user_id: 3, 
-						  address: "305 W Lake Street, Chicago, IL, 60606",
+						  address: "305 W Lake Street",
+						  city: "Chicago",
+						  state: "IL",
+						  zipcode: "60606",
 						  phone: "(312) 621-9663",
 						  website: "http://blackwoodbbq.com",
 						  description: "That mac 'n cheese tho.")
 
 cosi = Place.create!(name: "Cosi",
 					 user_id: 3,
-					 address: "203 North LaSalle Street, Chicago, IL, 60601",
+					 address: "203 North LaSalle Street",
+					 city: "Chicago",
+					 state: "IL",
+					 zipcode: "60601",
 					 phone: "(312) 368-4400",
 					 website: "https://getcosi.com/",
 					 description: "Expensive sandwiches")
 
 subway = Place.create!(name: "Subway",
 					   user_id: 3,
-					   address: "414 N Orleans St, Chicago, IL, 60654",
+					   address: "414 N Orleans St",
+					   city: "Chicago",
+					   state: "IL",
+					   zipcode: "60654",
 					   phone: "0000000000",
 					   website: "http://www.subway.com",
 					   description: "5 dollar foot-long")

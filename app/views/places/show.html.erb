@@ -1,4 +1,3 @@
-
 <%= javascript_include_tag 'maps' %>
 <div class="container voteable-container">
 
@@ -10,10 +9,7 @@
           <div class="col-md-8 col-sm-8 col-lg-8 col-xs-8"  id="info-text">
 	           Score: <span class="score"><%= @place.score %></span><br>
 	           Phone: <%= @place.phone %><br>
-              Address: <div id="place_address"><%= @place.address %></div><br>
-              City: <%= @place.city %><br>
-              State: <%= @place.state %><br>
-	           Zipcode: <%= @place.zipcode %><br>
+             Address: <div id="place_address"><%= @place.address %>, <%= @place.city %>, <%= @place.state %>, <%= @place.zipcode %></div><br>
 	           Website: <%= @place.website %><br>
 	           description: <%= @place.description %>
           </div>

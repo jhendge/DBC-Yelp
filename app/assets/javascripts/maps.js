@@ -16,24 +16,19 @@ $(document).ready(function() {
 	  var root = document.getElementById('place_map_container')
 	  map = new google.maps.Map(root,
 	      mapOptions);
-	  console.log(map);
 	  directionsDisplay.setMap(map);
 
-	  // var script = document.createElement('script');
-	  // script.type = 'text/javascript';
-	  // script.src = 'https://maps.googleapis.com/maps/api/js?v=3.exp&'
-	  // document.body.appendChild(script);
 	};
 
 	function calcRoute() {
 	  var start = "351 W Hubbard St, Chicago, Il";
 	  var end = $("#place_address").text();
-	  console.log(end);
 	  var request = {
 	    origin:start,
 	    destination:end,
 	    travelMode: google.maps.TravelMode.WALKING
 	  };
+	  console.log(request);
 	  directionsService.route(request, function(result, status) {
 	    if (status == google.maps.DirectionsStatus.OK) {
 	      directionsDisplay.setDirections(result);
