@@ -1,3 +1,4 @@
+<%= javascript_include_tag 'main_map' %>
 <div class="place_container">
 
 	<div style="height:400px;width:600px" id="places_map"></div>
@@ -11,12 +12,14 @@
 	<% @places.each do |place| %>
 
 		<header>
-			<h1><%= place.name %></h1>
+			<h1><%= link_to place.name, place_path(place), class: "place_name" %></h1>
 
 			<div class="place_score">Score: <%= place.score %></div>
 			<div class="place_phone">Phone: <%= place.phone %></div>
 			<div class="place_address"><%= place.address %></div>
 			<div class="place_website">Website: <%= place.website %></div>
+			<div class="place_lat" style="display:none"><%= place.lat %></div>
+			<div class="place_lng" style="display:none"><%= place.lng %></div>
 
 		</header>
 		<div class="photo_container">
@@ -32,4 +35,5 @@
 			<% end %>
 		</div>
 	<% end %>
+
 </div>

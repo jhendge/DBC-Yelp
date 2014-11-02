@@ -15,6 +15,7 @@ class PlacesController < ApplicationController
 	def create
 		@place = Place.new(params_place)
 		@place.user_id = current_user.id # UserHelper method
+		@place.find_coord
 		if request.xhr?
 			# Return some JSON stuff
 		else
