@@ -10,6 +10,7 @@
 		<div id="place_website">Website: <%= @place.website %></div>
 
 	</header>
+	<p class="place_description"><%= @place.description %></p>
 
 	<div style="height:400px;width:600px" id="place_map_container"><%= @place.map %></div>
 	<div class="photo_container">
@@ -17,7 +18,9 @@
 			<%# render :"photos/show", locals: {:photo => photo} %>
 		<%# end %>
 	</div>
-	<p class="place_description"><%= @place.description %></p>
+
+	<ul id="directions">
+	</ul>
 
 	<div class="reviews_container">
 		<% @place.reviews.each do |review| %>

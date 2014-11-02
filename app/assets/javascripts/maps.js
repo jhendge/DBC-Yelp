@@ -38,11 +38,12 @@ $(document).ready(function() {
 	    if (status == google.maps.DirectionsStatus.OK) {
 	      directionsDisplay.setDirections(result);
 	      console.log(result);
-	      // var steps = result.routes[0].legs[0].steps;
-	      // console.log(steps);
-	      // for(var i = 0; i<steps.length;i++) {
-	      // 	console.log(steps[i].instructions);
-	      // }
+	      var steps = result.routes[0].legs[0].steps;
+	      console.log(steps);
+	      for(var i = 0; i<steps.length;i++) {
+	      	var instructions = "<li>"+steps[i].instructions+"</li>";
+	      	$("#directions").append(instructions);
+	      }
 	    }
 	  });
 	}
