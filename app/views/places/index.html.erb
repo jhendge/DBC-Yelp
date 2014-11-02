@@ -9,39 +9,45 @@
 <% end %>
 
 <div class="row">
-<<<<<<< HEAD
-  <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
-     <%= link_to 'Add a cool place', new_place_path, :class => "btn btn-block btn-primary" %><br>
-    <ul class="list-group">
-<% @places.each do |place| %>
-  <li class="list-group-item voteable-container" id="show-place-box">
-  <h3><%= link_to "#{place.name}", place_path(place) %> </h3>
-      <%= place.description %><br>
-      <%= place.address %><br>
-      <%= place.phone %><br>
-      <%= place.website %><br>
-      <span class="score"><%= place.score %></span>
-      <div class="place_lat" style="display:none"><%= place.lat %></div>
-      <div class="place_lng" style="display:none"><%= place.lng %></div>
-     <div class="votes-container">
-     <%= form_tag vote_up_path(place), class: "vote-up" do |f| %>
-      <%= hidden_field_tag(:"vote[voteable_id]", place.id) %>
-      <%= hidden_field_tag(:"vote[voteable_type]", "Place") %>
-      <%= hidden_field_tag(:"vote[upvote?]", true) %>
-      <%= submit_tag "Awesome", class: "btn btn-primary btn-default"  %>
-    <% end %>
-     <%= form_tag vote_up_path(place), class: "vote-up" do |f| %>
-      <%= hidden_field_tag(:"vote[voteable_id]", place.id) %>
-      <%= hidden_field_tag(:"vote[voteable_type]", "Place") %>
-      <%= hidden_field_tag(:"vote[upvote?]", false) %>
-      <%= submit_tag "Bummer", class: "btn btn-primary btn-default"  %>
-    <% end %>
-    </div>
-    </li>
-  <% end %>
+  <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">
 
+
+      <% @places.each do |place| %>
+
+      <ul class="list-group">
+        <li class="list-group-item" id="show-place-box">
+
+          <h3><%= link_to "#{place.name}", place_path(place) %> </h3>
+
+                   <%= place.description %><br>
+                   <%= place.address %><br>
+                   <%= place.phone %><br>
+                   <%= place.website %><br>
+                             <div class="btn-toolbar">
+                 <%= form_tag vote_up_path(place), class: "vote-up" do |f| %>
+                    <%= hidden_field_tag(:"vote[voteable_id]", place.id) %>
+                    <%= hidden_field_tag(:"vote[voteable_type]", "Place") %>
+                    <%= hidden_field_tag(:"vote[upvote?]", true) %>
+                    <%= submit_tag "upvote", class: "btn btn-group" %>
+                    <% end %>
+                     <span class="btn-group" id="score"><%= place.score %></span>
+  <%= form_tag vote_up_path(place), class: "vote-up" do |f| %>
+                    <%= hidden_field_tag(:"vote[voteable_id]", place.id) %>
+                    <%= hidden_field_tag(:"vote[voteable_type]", "Place") %>
+                    <%= hidden_field_tag(:"vote[upvote?]", false) %>
+                    <%= submit_tag "downvote", class: "btn btn-group" %>
+                    <% end %>
+                  </div>
+                  </li>
+
+
+
+
+
+            <% end %>
       </div>
     </div>
   </ul>
   </div>
 </div>
+
