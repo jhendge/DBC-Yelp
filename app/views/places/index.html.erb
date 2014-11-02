@@ -23,6 +23,8 @@
                    <%= place.address %><br>
                    <%= place.phone %><br>
                    <%= place.website %><br>
+                   <div class="place_lat" style="display:none"><%= place.lat %></div>
+                   <div class="place_lng" style="display:none"><%= place.lng %></div>
                              <div class="btn-toolbar">
                  <%= form_tag vote_up_path(place), class: "vote-up" do |f| %>
                     <%= hidden_field_tag(:"vote[voteable_id]", place.id) %>
