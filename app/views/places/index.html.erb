@@ -1,12 +1,13 @@
 <%= javascript_include_tag 'main_map' %>
 
-<div style="height:400px;width:600px" id="places_map"></div>
+<div class="row">
+  <div class="col-md-6 col-sm-6 col-md-offset-3 col-sm-offset-3">
+      <!-- this holds the map stuff -->
+    <div style="height:400px;width:600px" id="places_map"></div>
+  </div>
+</div>
 
-<% @categories.each do |category| %>
 
-<%= link_to category.name, {:controller => "categories", :action => "filter", by: category.name}, {:method => :get, :class => "btn btn-success" }%>
-
-<% end %>
 
 <div class="row">
   <div class="col-md-8 col-sm-8 col-md-offset-2 col-sm-offset-2">

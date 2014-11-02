@@ -17,19 +17,20 @@
             <%= link_to 'Edit Place', edit_place_path(@place), :class => "btn btn-primary btn-default" %><br>
             <div class="votes-container">
 
-             <%= form_tag vote_up_path(@place), class: "vote-up" do |f| %>
-              <%= hidden_field_tag(:"vote[voteable_id]", @place.id) %>
-              <%= hidden_field_tag(:"vote[voteable_type]", "Place") %>
-              <%= hidden_field_tag(:"vote[upvote?]", true) %>
-              <%= submit_tag "Awesome", class: "btn btn-primary btn-default" %>
-            <% end %>
-             <%= form_tag vote_up_path(@place), class: "vote-up" do |f| %>
-              <%= hidden_field_tag(:"vote[voteable_id]", @place.id) %>
-              <%= hidden_field_tag(:"vote[voteable_type]", "Place") %>
-              <%= hidden_field_tag(:"vote[upvote?]", false) %>
-              <%= submit_tag "Bummer", class: "btn btn-primary btn-default" %>
-              <% end %>
-            </div>
+                <%= form_tag vote_up_path(@place), class: "vote-up" do |f| %>
+                    <%= hidden_field_tag(:"vote[voteable_id]", @place.id) %>
+                    <%= hidden_field_tag(:"vote[voteable_type]", "Place") %>
+                    <%= hidden_field_tag(:"vote[upvote?]", true) %>
+                    <%= submit_tag "upvote", class: "btn btn-group" %>
+                    <% end %>
+                     <span class="btn-group" id="score"><%= @place.score %></span>
+                  <%= form_tag vote_up_path(@place), class: "vote-up" do |f| %>
+                    <%= hidden_field_tag(:"vote[voteable_id]", @place.id) %>
+                    <%= hidden_field_tag(:"vote[voteable_type]", "Place") %>
+                    <%= hidden_field_tag(:"vote[upvote?]", false) %>
+                    <%= submit_tag "downvote", class: "btn btn-group" %>
+                    <% end %>
+                  </div>
 
           </div>
         </div>
@@ -47,6 +48,7 @@
       </div>
 
     <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4" id="directions-container">
+      <h2>Walking Directions</h2>
       <ul id="directions">
       </ul>
 	  </div>

@@ -48,12 +48,26 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">DBCYelp</a>
+        <%= link_to image_tag "unnamed.gif", id: "icon",  class: "navbar-brand" %>
+
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-
+            <p class="navbar-text">DevFoodCamp</p>
             <li class="nav-link"><%= link_to "Create", new_place_path  %></li>
+             <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/">All</a></li>
+            <li><a href="/filter?by=Mexican">Mexican</a></li>
+            <li><a href="/filter?by=BBQ">BBQ</a></li>
+            <li><a href="/filter?by=Sandwiches">Sandwiches</a></li>
+            <li><a href="/filter?by=Pizza">Pizza</a></li>
+            <li><a href="/filter?by=Burgers">Burgers</a></li>
+            <li><a href="/filter?by=Coffee">Coffee</a></li>
           </ul>
+        </li>
+          </ul>
+
           <ul class="nav navbar-nav navbar-right">
 
             <li><a href="/signin">Login</a></li>
