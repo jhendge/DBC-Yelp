@@ -1,12 +1,15 @@
 class PlacesController < ApplicationController
-	# include UserHelper
+	include SessionsHelper
+
 	def index
 		@places = Place.all
+		@vote = Vote.new
 	end
 
 
 	def show
 		@place = Place.find(params[:id])
+		render :show, :layout => false
 	end
 
 	def create
@@ -20,7 +23,7 @@ class PlacesController < ApplicationController
 				return redirect_to place_path(@place)
 			else
 				@error = "That don't be right."
-				return render :"places/form"
+				#return render :"places/form"
 			end
 		end
 	end
@@ -28,25 +31,25 @@ class PlacesController < ApplicationController
 	def edit
 		# should only get called if JS is disabled
 		@place = Place.find(params[:id])
-		return redirect_to edit_place_path(@place)
+		#return redirect_to edit_place_path(@place)
 	end
 
 
 	def new
 		@place = Place.new()
-		return render :"places/form"
+		#return render :"places/form"
 	end
 
-	def update
-		@place = Place.find(params[:id])
-		if request.xhr?
-			# AJAX stuff
-		else
-			if @place.update_attributes(params_place)
-				return redirect_to place_path(@place)
-			end
-		end
-	end
+	# def update
+	# 	@place = Place.find(params[:id])
+	# 	if request.xhr?
+	# 		# AJAX stuff
+	# 	else
+	# 		if @place.update_attributes(params_place)
+	# 			return redirect_to place_path(@place)
+	# 		end
+	# 	end
+	# end
 
 	def destroy
 		place = Place.find(params[:id])
@@ -54,9 +57,16 @@ class PlacesController < ApplicationController
 		return redirect_to root_url
 	end
 
+	def update
+		@place = Place.find(params[:place_id])
+		@place.incremenet(:votes)
+		@place.save
+		redirect_to place_path
+	end
+
 	private
 
 	def params_place
-		params.require(:place).permit(:category, :name, :address, :phone, :website, :description)
+		params.require(:place).permit(:category, :name, :address, :city, :state, :zipcode, :phone, :website, :description)
 	end
 end

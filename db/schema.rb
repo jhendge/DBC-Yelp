@@ -35,6 +35,9 @@ ActiveRecord::Schema.define(version: 20141030200556) do
     t.integer  "category_id"
     t.string   "name"
     t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
     t.string   "phone"
     t.string   "website"
     t.text     "description"
@@ -64,6 +67,7 @@ ActiveRecord::Schema.define(version: 20141030200556) do
 
   create_table "votes", force: true do |t|
     t.integer  "voteable_id"
+    t.integer  "user_id"
     t.string   "voteable_type"
     t.boolean  "upvote?"
     t.datetime "created_at"

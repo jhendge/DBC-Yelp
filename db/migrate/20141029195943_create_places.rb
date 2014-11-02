@@ -5,6 +5,9 @@ class CreatePlaces < ActiveRecord::Migration
       t.belongs_to :category, index: true
       t.string :name
       t.string :address
+      t.string :city
+      t.string :state
+      t.string :zipcode
       t.string :phone
       t.string :website
       t.text :description
