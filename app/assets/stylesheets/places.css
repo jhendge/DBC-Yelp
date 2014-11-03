@@ -19,6 +19,10 @@ img{
   color: white;
 }
 
+#review-votes{
+  margin-top: -50px;
+}
+
 .votes-container{
   margin-top: 50px;
 }
@@ -38,13 +42,17 @@ img{
   background-color: #FF513E;
 }
 
+.votes{
+  width: 100px;
+}
+
 #icon{
   padding-top: -10px;
   padding-bottom: -10px;
 }
 
-#score{
-  padding-left: 2px;
+.score{
+  padding-left: 10px;
   padding-right: 5px;
   font-size: 230%;
   margin-top: -5px;
