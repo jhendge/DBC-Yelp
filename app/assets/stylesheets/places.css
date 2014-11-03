@@ -1,0 +1,90 @@
+h3{
+  font-size: 70px;
+  color:#428BCA;
+}
+
+h2{
+  margin-bottom: 40px;
+}
+
+img{
+  height: 80px;
+  width: 80px;
+}
+.navbar-brand{
+  text-align: center;
+}
+
+.navbar .nav > li > a{
+  color: white;
+}
+
+#review-votes{
+  margin-top: -50px;
+}
+
+.votes-container{
+  margin-top: 50px;
+}
+
+.score{
+  position: relative;
+  margin-left: 30px;
+}
+
+
+.navbar-text{
+  font-family: 'Abril Fatface', cursive;
+  color: white;
+}
+
+.navbar{
+  background-color: #FF513E;
+}
+
+.votes{
+  width: 100px;
+}
+
+#icon{
+  padding-top: -10px;
+  padding-bottom: -10px;
+}
+
+.score{
+  padding-left: 10px;
+  padding-right: 5px;
+  font-size: 230%;
+  margin-top: -5px;
+  font-family: 'Abril Fatface', cursive;
+}
+
+.review-container{
+  border-bottom: solid;
+  border-color: lightgray;
+  padding-top: 15px;
+}
+
+#directions-container{
+  border: solid;
+  border-color: gray;
+}
+
+#reviews-container{
+  border: solid;
+  border-color: gray;
+}
+
+#reviews-container:empty{
+  border: none;
+}
+
+
+.nav-link{
+  color: white;
+}
+
+
+.btn{
+  background-color: ;
+}
