@@ -8,7 +8,7 @@
 
 
 ################ Sample Places ################
-chipotle = Place.create!(description: "\"It's pronounced 'Chip-po-tlay'.\"", 
+chipotle = Place.create!(description: "It's pronounced 'Chip-po-tlay'.", 
 						 user_id: 1, 
 						 name: "Chipotle", 
 						 address: "233 W Lake St", 
@@ -57,9 +57,6 @@ sammich = Category.create!(name: "Sandwiches")
 pizza = Category.create!(name: "Pizza")
 burg = Category.create!(name: "Burgers")
 coffee = Category.create!(name: "Coffee")
-
-sammich.places << cosi
-sammich.places << subway
 
 burrito = Photo.create!(place_id: 1, url: "http://www.fizzgrid.com/wp-content/uploads/2014/03/double-wrap.jpg", description: "a delicious, savory meal within the confines of a flour tortilla")
 tacos = Photo.create!(place_id: 1, url: "http://www.mjandhungryman.com/wp-content/uploads/2013/05/Chipotle-Marinated-Chicken-blog1.jpg", description: "unlike burritos, tacos are meant to be served in multiples of three...")

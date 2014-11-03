@@ -18,9 +18,8 @@ class Place < ActiveRecord::Base
   validates :address, presence: true
 
 
-  def map
-  	###### TODO ######
-  	"<map goes here>"
+  def full_address
+    address + ", " + city + ", " + state + ", " + zipcode
   end
 
   def score
@@ -28,7 +27,7 @@ class Place < ActiveRecord::Base
   end
 
   def find_coord
-    address_json = JSON.parse(Net::HTTP.get(URI("https://maps.googleapis.com/maps/api/geocode/json?address=#{URI::escape(self.address)}")))
+    address_json = JSON.parse(Net::HTTP.get(URI("https://maps.googleapis.com/maps/api/geocode/json?address=#{URI::escape(full_address)}")))
     self.lat = address_json["results"][0]["geometry"]["location"]["lat"]
     self.lng = address_json["results"][0]["geometry"]["location"]["lng"]
   end

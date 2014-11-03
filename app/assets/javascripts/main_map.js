@@ -26,16 +26,12 @@ $(document).ready(function() {
 
 	function codeAddress() {
 		var placesNames = $('h3').children('a');
-		console.log(placesNames);
 		var placesLat = $(".place_lat");
 		var placesLng = $(".place_lng");
 		for(var i = 0; i < placesNames.length; i++) {
 			var url = $(placesNames[i]).attr('href');
 			var myLatlng = new google.maps.LatLng(placesLat[i].innerHTML, placesLng[i].innerHTML);
 			var label = placesNames[i].innerHTML;
-			console.log(label);
-			console.log(url);
-			console.log(myLatlng);
 	        var marker = new google.maps.Marker({
 	              position: myLatlng,
 	              map: map,
