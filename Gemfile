@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 
@@ -55,3 +54,5 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# HEROKU WORK YOU GODDAMN PIECE OF %$#%$(#)
+gem 'rails_12factor', group: :production
