@@ -82,7 +82,7 @@ Build highly customisable maps with specific content and imagery
 
 11. Push your code to your remote feature branch:
 
-    <tt>git push origin Daniel_awesomebranch</tt>
+    <tt>git push origin Joe_awesomebranch</tt>
 
 12. Submit a pull request on Github for code review.
 
